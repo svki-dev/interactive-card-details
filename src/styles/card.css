@@ -1,0 +1,63 @@
+.Card {
+    width: 40%;
+    background-image: url("/src/assets/images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: contain;
+    padding-left: 13rem;
+
+    & .Card-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.Card-front {
+    width: 44.7rem;
+    color: var(--white-color);
+    background-image: url("/src/assets/images/bg-card-front.png");
+    background-repeat: no-repeat;
+    padding: 0 3rem 0 3rem;
+
+    & .Card-logo {
+        padding: 3rem 0 6rem 0;
+    }
+
+    & .Card-number {
+        font-size: 3rem;
+    }
+
+    & .Card-name-date {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 2rem 0 3rem 0;
+
+        & .Card-name {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        & .Card-date {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.Card-back {
+    width: 44.7rem;
+    position: relative;
+    padding: 4rem 0 0 6rem;
+
+    & .Card-csv-number {
+        position: absolute;
+        top: 15.2rem;
+        right: 0rem;
+        color: var(--white-color);
+        font-size: 1.5rem;
+    }
+}

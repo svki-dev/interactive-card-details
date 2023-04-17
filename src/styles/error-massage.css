@@ -1,0 +1,7 @@
+.ErrorMessage-container {
+    padding-top: 0.5rem;
+    & p {
+        color: var(--input-errors);
+        font-size: 1.2rem;
+    }
+}
