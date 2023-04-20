@@ -1,8 +1,7 @@
 .Card {
-    width: 40%;
+    width: 50%;
     background-image: url("/src/assets/images/bg-main-desktop.png");
     background-repeat: no-repeat;
-    background-position: 0% 50%;
     background-size: contain;
     padding-left: 13rem;
 
@@ -11,22 +10,46 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+
+        & .Card-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
 .Card-front {
     width: 44.7rem;
     color: var(--white-color);
-    background-image: url("/src/assets/images/bg-card-front.png");
-    background-repeat: no-repeat;
     padding: 0 3rem 0 3rem;
+    position: relative;
+
+    & > img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 
     & .Card-logo {
+        width: 10rem;
         padding: 3rem 0 6rem 0;
+        position: relative;
+        z-index: 99;
     }
 
     & .Card-number {
-        font-size: 3rem;
+        font-size: clamp(
+            1.8rem,
+            calc(1.8rem + ((1vw - 0.36rem) * 0.7692)),
+            3rem
+        );
+        position: relative;
+        z-index: 99;
     }
 
     & .Card-name-date {
@@ -36,14 +59,24 @@
         justify-content: space-between;
         align-items: flex-end;
         padding: 2rem 0 3rem 0;
+        position: relative;
+        z-index: 99;
 
         & .Card-name {
-            font-size: 1.6rem;
+            font-size: clamp(
+                1.2rem,
+                calc(1.2rem + ((1vw - 0.36rem) * 0.4762)),
+                1.6rem
+            );
             text-transform: uppercase;
         }
 
         & .Card-date {
-            font-size: 1.5rem;
+            font-size: clamp(
+                1.2rem,
+                calc(1.2rem + ((1vw - 0.36rem) * 0.3571)),
+                1.5rem
+            );
         }
     }
 }
@@ -51,13 +84,14 @@
 .Card-back {
     width: 44.7rem;
     position: relative;
-    padding: 4rem 0 0 6rem;
+    padding-top: 4rem;
+    color: var(--white-color);
+    font-size: clamp(1.2rem, calc(1.2rem + ((1vw - 0.36rem) * 0.3571)), 1.5rem);
+    align-self: flex-end;
 
-    & .Card-csv-number {
+    & p {
         position: absolute;
-        top: 15.2rem;
-        right: 0rem;
-        color: var(--white-color);
-        font-size: 1.5rem;
+        top: 15rem;
+        right: 5rem;
     }
 }

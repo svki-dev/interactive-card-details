@@ -1,5 +1,6 @@
 import cardLogo from "../assets/images/card-logo.svg";
 import creditCardBack from "../assets/images/bg-card-back.png";
+import creditCardFront from "../assets/images/bg-card-front.png";
 import useCardStore from "../store/card-store";
 
 function Card() {
@@ -9,6 +10,7 @@ function Card() {
             <div className="Card-container">
                 <div className="Card-wrapper">
                     <div className="Card-front">
+
                         <div className="Card-logo">
                             <img src={cardLogo} alt="Credit Card Logo" />
                         </div>
@@ -19,6 +21,7 @@ function Card() {
                             <p className="Card-name">{cardDetails.cardHolderName}</p>
                             <p className="Card-date">{cardDetails.expiryMonth}/{cardDetails.expiryYear}</p>
                         </div>
+                        <img src={creditCardFront} alt="Credit Card Frontside" />
                     </div>
                     <div className="Card-back">
                         <img src={creditCardBack} alt="Credit Card Backside" />

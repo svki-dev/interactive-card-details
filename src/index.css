@@ -32,6 +32,9 @@ html {
     -webkit-hyphens: none;
             hyphens: none;
 }
+img {
+    width: 100%;
+}
 .App > div {
     display: flex;
     flex-direction: row;
@@ -39,10 +42,9 @@ html {
     height: 100vh;
 }
 .Card {
-    width: 40%;
+    width: 50%;
     background-image: url("/src/assets/images/bg-main-desktop.png");
     background-repeat: no-repeat;
-    background-position: 0% 50%;
     background-size: contain;
     padding-left: 13rem;
 }
@@ -51,19 +53,41 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
+.Card .Card-container .Card-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 .Card-front {
     width: 44.7rem;
     color: var(--white-color);
-    background-image: url("/src/assets/images/bg-card-front.png");
-    background-repeat: no-repeat;
     padding: 0 3rem 0 3rem;
+    position: relative;
 }
+.Card-front > img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 .Card-front .Card-logo {
+        width: 10rem;
         padding: 3rem 0 6rem 0;
+        position: relative;
+        z-index: 99;
     }
 .Card-front .Card-number {
-        font-size: 3rem;
+        font-size: clamp(
+            1.8rem,
+            calc(1.8rem + ((1vw - 0.36rem) * 0.7692)),
+            3rem
+        );
+        position: relative;
+        z-index: 99;
     }
 .Card-front .Card-name-date {
         display: flex;
@@ -72,36 +96,46 @@ html {
         justify-content: space-between;
         align-items: flex-end;
         padding: 2rem 0 3rem 0;
+        position: relative;
+        z-index: 99;
     }
 .Card-front .Card-name-date .Card-name {
-            font-size: 1.6rem;
+            font-size: clamp(
+                1.2rem,
+                calc(1.2rem + ((1vw - 0.36rem) * 0.4762)),
+                1.6rem
+            );
             text-transform: uppercase;
         }
 .Card-front .Card-name-date .Card-date {
-            font-size: 1.5rem;
+            font-size: clamp(
+                1.2rem,
+                calc(1.2rem + ((1vw - 0.36rem) * 0.3571)),
+                1.5rem
+            );
         }
 .Card-back {
     width: 44.7rem;
     position: relative;
-    padding: 4rem 0 0 6rem;
+    padding-top: 4rem;
+    color: var(--white-color);
+    font-size: clamp(1.2rem, calc(1.2rem + ((1vw - 0.36rem) * 0.3571)), 1.5rem);
+    align-self: flex-end;
 }
-.Card-back .Card-csv-number {
+.Card-back p {
         position: absolute;
-        top: 15.2rem;
-        right: 0rem;
-        color: var(--white-color);
-        font-size: 1.5rem;
+        top: 15rem;
+        right: 5rem;
     }
 .CardForm {
-    width: 60%;
+    width: 50%;
 }
 .CardForm-container {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-left: 24rem;
 }
 .CardForm-wrapper {
     width: 40%;
@@ -112,12 +146,20 @@ html {
     }
 .CardForm-wrapper form label {
             color: var(--very-dark-violet);
-            font-size: 1.8rem;
+            font-size: clamp(
+                1.3rem,
+                calc(1.3rem + ((1vw - 0.36rem) * 0.2273)),
+                1.8rem
+            );
             text-transform: uppercase;
             padding: 2.5rem 0 0.5rem 0;
         }
 .CardForm-wrapper form input {
-            font-size: 2rem;
+            font-size: clamp(
+                1.3rem,
+                calc(1.3rem + ((1vw - 0.36rem) * 0.2273)),
+                1.8rem
+            );
             color: var(--dark-grayish-violet);
             height: 4rem;
             border: 1px solid var(--light-grayish-violet);
@@ -125,7 +167,11 @@ html {
             padding: 2rem 1rem;
         }
 .CardForm-wrapper form input::placeholder {
-                font-size: 2rem;
+                font-size: clamp(
+                    1.3rem,
+                    calc(1.3rem + ((1vw - 0.36rem) * 0.2273)),
+                    1.8rem
+                );
                 color: var(--dark-grayish-violet);
             }
 .CardForm-wrapper form input::-webkit-inner-spin-button {
@@ -152,7 +198,7 @@ html {
             padding-top: 2.5rem;
         }
 .CardForm-wrapper form .CardForm-expiry-cvc-wrapper .CardForm-expiry-wrapper {
-                width: 50%;
+                width: 70%;
             }
 .CardForm-wrapper form .CardForm-expiry-cvc-wrapper .CardForm-expiry-wrapper input {
                     width: 40%;
@@ -164,8 +210,14 @@ html {
 .CardForm-wrapper form .CardForm-expiry-cvc-wrapper .CardForm-expiry-wrapper input:last-child {
                         float: right;
                     }
+.CardForm-wrapper form .CardForm-expiry-cvc-wrapper .CardForm-expiry-wrapper div {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 0.5rem;
+                }
 .CardForm-wrapper form .CardForm-expiry-cvc-wrapper .CardForm-cvc-wrapper {
-                width: 50%;
+                width: 30%;
             }
 .CardForm-wrapper form .CardForm-expiry-cvc-wrapper .CardForm-cvc-wrapper input {
                     width: 100%;
@@ -181,6 +233,79 @@ html {
             padding: 1.8rem 0rem;
             margin-top: 4rem;
         }
+@media screen and (max-width: 1200px) {
+        .App div {
+            flex-direction: column;
+            height: auto;
+        }
+
+    .Card {
+        width: 100%;
+        background-size: cover;
+        padding: 0;
+    }
+
+        .Card .Card-container {
+            height: clamp(
+                22rem,
+                calc(22rem + ((1vw - 0.36rem) * 16.6667)),
+                36rem
+            );
+            justify-content: flex-start;
+        }
+
+        .Card .Card-wrapper {
+            justify-content: flex-start !important;
+        }
+
+            .Card .Card-wrapper .Card-front {
+                width: clamp(
+                    29rem,
+                    calc(29rem + ((1vw - 0.36rem) * 18.6905)),
+                    44.7rem
+                );
+                position: absolute;
+                bottom: -5rem;
+                transform: translateX(-9%);
+                z-index: 99;
+            }
+
+            .Card .Card-wrapper .Card-back {
+                width: clamp(
+                    29rem,
+                    calc(29rem + ((1vw - 0.36rem) * 18.6905)),
+                    44.7rem
+                );
+                align-self: center;
+                padding: 0;
+                margin-top: 2rem;
+                transform: translateX(
+                    clamp(2rem, calc(2rem + ((1vw - 0.36rem) * 4.7619)), 6rem)
+                );
+            }
+
+                .Card .Card-wrapper .Card-back p {
+                    top: clamp(
+                        7rem,
+                        calc(7rem + ((1vw - 0.36rem) * 4.7619)),
+                        11rem
+                    );
+                }
+
+    .CardForm {
+        width: 100%;
+        padding-top: 7rem;
+    }
+
+        .CardForm .CardForm-container {
+            justify-content: flex-end;
+            padding-left: 0;
+        }
+
+            .CardForm .CardForm-container .CardForm-wrapper {
+                width: 31rem;
+            }
+}
 .ErrorMessage-container {
     padding-top: 0.5rem;
 }

@@ -1,0 +1,75 @@
+@media screen and (max-width: 1200px) {
+    .App {
+        & div {
+            flex-direction: column;
+            height: auto;
+        }
+    }
+
+    .Card {
+        width: 100%;
+        background-size: cover;
+        padding: 0;
+
+        & .Card-container {
+            height: clamp(
+                22rem,
+                calc(22rem + ((1vw - 0.36rem) * 16.6667)),
+                36rem
+            );
+            justify-content: flex-start;
+        }
+
+        & .Card-wrapper {
+            justify-content: flex-start !important;
+
+            & .Card-front {
+                width: clamp(
+                    29rem,
+                    calc(29rem + ((1vw - 0.36rem) * 18.6905)),
+                    44.7rem
+                );
+                position: absolute;
+                bottom: -5rem;
+                transform: translateX(-9%);
+                z-index: 99;
+            }
+
+            & .Card-back {
+                width: clamp(
+                    29rem,
+                    calc(29rem + ((1vw - 0.36rem) * 18.6905)),
+                    44.7rem
+                );
+                align-self: center;
+                padding: 0;
+                margin-top: 2rem;
+                transform: translateX(
+                    clamp(2rem, calc(2rem + ((1vw - 0.36rem) * 4.7619)), 6rem)
+                );
+
+                & p {
+                    top: clamp(
+                        7rem,
+                        calc(7rem + ((1vw - 0.36rem) * 4.7619)),
+                        11rem
+                    );
+                }
+            }
+        }
+    }
+
+    .CardForm {
+        width: 100%;
+        padding-top: 7rem;
+
+        & .CardForm-container {
+            justify-content: flex-end;
+            padding-left: 0;
+
+            & .CardForm-wrapper {
+                width: 31rem;
+            }
+        }
+    }
+}

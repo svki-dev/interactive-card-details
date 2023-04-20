@@ -33,3 +33,7 @@ html {
     scroll-behavior: smooth;
     hyphens: none;
 }
+
+img {
+    width: 100%;
+}

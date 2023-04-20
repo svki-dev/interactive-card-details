@@ -31,24 +31,26 @@ function CardForm() {
                         <div className="CardForm-expiry-cvc-wrapper">
                             <div className="CardForm-expiry-wrapper">
                                 <label>Exp. Date (MM/YY)</label>
-                                <input
-                                    name="expiryMonth"
-                                    type="tel"
-                                    className="CardFrom-expiry-month"
-                                    placeholder="MM"
-                                    pattern="(0[1-9]|1[0-2])"
-                                    onChange={(e) => cardDetails.setExpiryMonth(e.target.value)}
-                                    required
-                                />
-                                <input
-                                    name="expiryYear"
-                                    type="tel"
-                                    className="CardFrom-expiry-year"
-                                    placeholder="YY"
-                                    pattern="\d{2}"
-                                    onChange={(e) => cardDetails.setExpiryYear(e.target.value)}
-                                    required
-                                />
+                                <div>
+                                    <input
+                                        name="expiryMonth"
+                                        type="tel"
+                                        className="CardFrom-expiry-month"
+                                        placeholder="MM"
+                                        pattern="(0[1-9]|1[0-2])"
+                                        onChange={(e) => cardDetails.setExpiryMonth(e.target.value)}
+                                        required
+                                    />
+                                    <input
+                                        name="expiryYear"
+                                        type="tel"
+                                        className="CardFrom-expiry-year"
+                                        placeholder="YY"
+                                        pattern="\d{2}"
+                                        onChange={(e) => cardDetails.setExpiryYear(e.target.value)}
+                                        required
+                                    />
+                                </div>
                             </div>
                             <div className="CardForm-cvc-wrapper">
                                 <label>CVC</label>
