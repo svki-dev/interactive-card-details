@@ -33,6 +33,26 @@
                 bottom: -5rem;
                 transform: translateX(-9%);
                 z-index: 99;
+
+                & .Card-logo {
+                    width: clamp(
+                        5rem,
+                        calc(5rem + ((1vw - 0.36rem) * 5.9524)),
+                        10rem
+                    );
+                    padding: clamp(
+                            0.1rem,
+                            calc(0.1rem + ((1vw - 0.36rem) * 3.4524)),
+                            3rem
+                        )
+                        0
+                        clamp(
+                            2rem,
+                            calc(2rem + ((1vw - 0.36rem) * 4.7619)),
+                            6rem
+                        )
+                        0;
+                }
             }
 
             & .Card-back {
