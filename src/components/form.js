@@ -1,12 +1,20 @@
 import useCardStore from "../store/card-store";
+import Thanks from "./thanks";
 
 function CardForm() {
     const cardDetails = useCardStore();
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = document.querySelector(".CardForm form");
+        const thanks = document.querySelector(".Thanks");
+        form.classList.add("form_hide");
+        thanks.classList.remove("form_hide");
+    }
     return (
         <div className="CardForm">
             <div className="CardForm-container">
                 <div className="CardForm-wrapper">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <label>Cardholder Name</label>
                         <input
                             name="cardholderName"
@@ -67,9 +75,11 @@ function CardForm() {
                         </div>
                         <button className="CardForm-btn" type="submit">Confirm</button>
                     </form>
+                    <Thanks />
                 </div>
             </div>
         </div>
+
     );
 }
 

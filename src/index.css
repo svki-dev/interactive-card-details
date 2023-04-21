@@ -35,6 +35,12 @@ html {
 img {
     width: 100%;
 }
+.form_hide {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
 .App > div {
     display: flex;
     flex-direction: row;
@@ -42,7 +48,7 @@ img {
     height: 100vh;
 }
 .Card {
-    width: 50%;
+    width: 40%;
     background-image: url("/src/assets/images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -128,7 +134,7 @@ img {
         right: 5rem;
     }
 .CardForm {
-    width: 50%;
+    width: 60%;
 }
 .CardForm-container {
     width: 100%;
@@ -325,6 +331,15 @@ img {
             .CardForm .CardForm-container .CardForm-wrapper {
                 width: 31rem;
             }
+
+    .Thanks {
+        width: 100% !important;
+        padding-top: 10rem;
+    }
+
+        .Thanks img {
+            width: 10rem !important;
+        }
 }
 .ErrorMessage-container {
     padding-top: 0.5rem;
@@ -332,4 +347,51 @@ img {
 .ErrorMessage-container p {
         color: var(--input-errors);
         font-size: 1.2rem;
+    }
+.Thanks {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Thanks img {
+        width: 25%;
+    }
+.Thanks h1 {
+        font-size: clamp(
+            1.8rem,
+            calc(1.8rem + ((1vw - 0.36rem) * 0.7692)),
+            3rem
+        );
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 3px;
+        color: var(--very-dark-violet);
+        padding: 3rem 0 2rem 0;
+    }
+.Thanks p {
+        font-size: clamp(
+            1.2rem,
+            calc(1.2rem + ((1vw - 0.36rem) * 0.4762)),
+            1.6rem
+        );
+        font-weight: 500;
+        color: var(--dark-grayish-violet);
+        padding-bottom: 4rem;
+    }
+.Thanks button {
+        font-size: clamp(
+            1.2rem,
+            calc(1.2rem + ((1vw - 0.36rem) * 0.4)),
+            1.6rem
+        );
+        background-color: var(--very-dark-violet);
+        border: none;
+        border-radius: 5px;
+        color: var(--white-color);
+        padding: 1rem 11rem;
+        cursor: pointer;
     }

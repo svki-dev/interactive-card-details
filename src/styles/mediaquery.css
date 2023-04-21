@@ -92,4 +92,13 @@
             }
         }
     }
+
+    .Thanks {
+        width: 100% !important;
+        padding-top: 10rem;
+
+        & img {
+            width: 10rem !important;
+        }
+    }
 }
