@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://github.com/svki-dev/interactive-card-details)
--   Live Site URL: [Add live site URL here](https://sven-kilcher-interactive-card-details.netlify.app/)
+-   Solution URL: [GitHub Repository](https://github.com/svki-dev/interactive-card-details)
+-   Live Site URL: [Netlify Deployment](https://sven-kilcher-interactive-card-details.netlify.app/)
 
 ## My process
 
@@ -46,7 +46,8 @@ Users should be able to:
 -   Semantic HTML5 markup
 -   CSS custom properties
 -   Flexbox
--   [React](https://reactjs.org/) - JS library
+-   [React](https://reactjs.org/)
+-   [Vite](https://vitejs.dev/) (Migration von CRA)
 
 ### What I learned
 
@@ -64,3 +65,23 @@ In this project I further deepened my experience with React.js and got involved 
 -   Frontend Mentor - [@WP-HH](https://www.frontendmentor.io/profile/WP-HH)
 -   Github - [@svki-dev](https://github.com/svki-dev)
 -   LinkedIn - [@Sven Kilcher](https://www.linkedin.com/in/sven-kilcher-b5a2331b5/)
+
+## Lokale Entwicklung (Vite)
+
+```bash
+npm install
+npm run dev
+```
+
+Build erzeugen:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Formular-Validierung
+
+-   Maskierung der Kartennummer in 4er-Gruppen und Luhn-Check (`src/utils/card-utils.js`).
+-   Ablaufdatum-Prüfung (MM/YY) gegen aktuelles Datum, CVC-Länge 3.
+-   Kontrollierte Inputs und React-State für Umschalten zur `Thanks`-Ansicht.

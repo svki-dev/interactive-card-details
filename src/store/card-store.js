@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
-const useCardStore = create((set, get) => ({
+const useCardStore = create((set) => ({
     cardHolderName: "Jane Appleseed",
-    cardNumber: 1234567891230000,
-    expiryMonth: 12,
-    expiryYear: 20,
-    cvv: 123,
+    cardNumber: "",
+    expiryMonth: "",
+    expiryYear: "",
+    cvv: "",
     setCardName: (cardHolderName) => set({ cardHolderName }),
     setCardNumber: (cardNumber) => set({ cardNumber }),
     setExpiryMonth: (expiryMonth) => set({ expiryMonth }),
